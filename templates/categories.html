@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class="row">
+
+			<div class="col-md-6">
+					<span class="page-header">Categories</span>
+				<ul class="">
+					{% for category in categories %}
+						<a href="{{url_for('showCategory', catalog_id = category.id )}}">
+							<li class="">
+								<span class="">{{category.name}}</span>
+							</li>
+						</a>
+					{% endfor %}
+				</ul>
+				{% if 'username' in session %}
+					<button type="button" class="btn btn-success"><a href="{{url_for('addCategoryItem')}}">ADD A GAME TO A STUDIO</a></button>
+				{% endif %}
+			</div>
+			<div class="col-md-6">
+					<span class="page-header">Latest Items</span>
+				<ul class="list__items">
+					{% for categoryItem in categoryItems %}
+						<a href="{{url_for('showCategoryItem', catalog_id = categoryItem.category_id ,item_id = categoryItem.id )}}">
+							<li class="items__item">
+								<span class="">{{categoryItem.name}}</span>
+								<span class="">({{categoryItem.category.name}})</span>
+							</li>
+						</a>
+					{% endfor %}
+				</ul>
+
+
+			</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class="row">
+		<div class="well well-sm">
+				<H4>{{categoryItem.name}}</H4>
+			<div>
+				<p>{{categoryItem.description}}</p>
+			</div>
+			<div>
+				<a href="{{url_for('showCategory', catalog_id = categoryItem.category_id)}}" class="btn btn-info">Back</a>
+
+				{% if 'username' in session and creator.id == session['user_id'] %}
+					<a href="{{url_for('editCategoryItem', catalog_id = categoryItem.category_id, item_id = categoryItem.id)}}" class="btn btn-success">Edit</a>
+					<a href="{{url_for('deleteCategoryItem', catalog_id = categoryItem.category_id, item_id = categoryItem.id)}}" class="btn btn-danger">Delete</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

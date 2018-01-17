@@ -1,0 +1,58 @@
+/* GeneralSyles */
+
+ul {
+	list-style-type: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a {
+	color: #6b6b6b;
+}
+
+
+.navbar {
+    background: #fff;
+    border-bottom: .1rem solid #d1d1d1;
+    display: block;
+    height: 75px;
+    width: 100%;
+}
+
+.navbar .appname {
+	color: #000;
+	display: inline;
+	line-height: 5.2rem;
+	position: relative;
+}
+
+.appname {
+	display: inline;
+	font-size: 1.5em;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	color: #000;
+}
+
+.user {
+	float: right;
+	list-style: none;
+	margin-bottom: 0;
+}
+
+.user .loginlink {
+	line-height: 5.2rem;
+	text-decoration: none;
+	font-size: 1em;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	color: #0a00cf;
+}
+
+.loginspacer {
+	margin: 20px;
+}

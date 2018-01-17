@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Game Stuio Item Catalog</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="/static/style.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+	<link rel="stylesheet" href="/static/milligram.min.css">
+	<link rel="stylesheet" href="/static/style.css"> -->
+</head>
+<body>
+
+		<header class="navbar navbar-default">
+			<div class="container">
+				<a href="/" class="appname">
+					<h1 class="">Game Studio Catalog</h1>
+				</a>
+				<div class="user">
+					{%if 'username' not in session %}
+					<p class="navbar-text navbar-right"> To contribute please   <a href="{{url_for('login')}}" class="navbar-link">LOGIN</a></p>
+					{% else %}
+					<p class="navbar-text navbar-right"> You are logged in! |    <a href="{{url_for('logout')}}" class="navbar-link">LOGOUT</a></p>
+					{% endif %}
+				</div>
+			</div>
+		</header>
+		<div class="content">
+			<div class="container">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+
+</body>
+</html>

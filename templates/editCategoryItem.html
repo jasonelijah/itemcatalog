@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class="row">
+		<div class="">
+			<h6 class="">
+				<h2 class="">Edit Existing Game</h2>
+			</h6>
+			<form action="#" method="post" class="form-group">
+				<fieldset>
+					<label>Name:</label>
+					<input type="text" name="name" value="{{categoryItem.name}}" class="form-control" id="gamename">
+					<label>Description:</label>
+					<textarea name="description" id="" cols="30" rows="10" class="form-control">{{categoryItem.description}}</textarea>
+					<label >Category:</label>
+					<select class="form-control" name="category">
+						{% for category in categories %}
+							{% if categoryItem.category_id == category.id %}
+								<option selected value="{{category.id}}">{{category.name}}</option>
+							{% else %}
+								<option value="{{category.id}}">{{category.name}}</option>
+							{% endif %}
+						{% endfor %}
+					</select>
+				</fieldset>
+				<br>
+				<a href="{{url_for('showCategoryItem', catalog_id = categoryItem.category_id ,item_id = categoryItem.id )}}" class="btn btn-info">Back</a>
+				<input type="submit" value="Save" class="btn btn-success" >
+				<br><br>
+				<p class="alert alert-danger" role="alert">Proceed with caution changes cannot be undone, only overwritten.</p>
+			</form>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class="row">
+		<div class="">
+			<h6 class="">
+				<span class="">Add Game to Catalog</span>
+			</h6>
+			<form action="#" method="post" class="">
+				<fieldset>
+					<label for="" class="">Name:</label><br>
+					<input type="text" name="name" class=""><br>
+					<label for="" class="">Description:</label><br>
+					<textarea name="description" id="" cols="30" rows="10" class=""></textarea><br><br>
+					<label for="" class="">Game Studio:</label><br>
+					<select class="" name="category">
+						{% for category in categories %}
+							<option value="{{category.id}}">{{category.name}}</option>
+						{% endfor %}
+					</select>
+				</fieldset>
+				<br><br>
+				<input type="submit" value="ADD GAME" class="btn btn-success">
+				{% with messages = get_flashed_messages() %}
+					{% if messages %}
+						{% for message in messages %}
+							 <p class="alert alert-warning" role="alert">{{ message }}</p>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</form>
+		</div>
+	</div>
+
+{% endblock %}
